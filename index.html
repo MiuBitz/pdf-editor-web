@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simple PDF Editor</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+<header><strong>Simple PDF Editor</strong><span>Local-only PDF filling</span><button id="openBtn">Open PDF</button><button id="downloadBtn" disabled>Download PDF</button><input id="file" type="file" accept="application/pdf" hidden></header>
+<main>
+<aside>
+<button data-tool="text">T Text</button>
+<button data-tool="tick">✓ Tick</button>
+<button data-tool="signature">✎ Signature</button>
+<button data-tool="image">▧ Image</button>
+<hr><button id="deleteBtn">Delete selected</button>
+<input id="imageInput" type="file" accept="image/png,image/jpeg" hidden>
+<div class="hint">Choose a tool, then click the PDF. Drag items to position them. Double-click text/signatures to edit.</div>
+</aside>
+<section class="workspace"><div id="stage"><canvas id="pdfCanvas"></canvas><div id="overlay"></div></div></section>
+<nav><button id="prev">‹</button><span id="pageInfo">No PDF</span><button id="next">›</button></nav>
+</main>
+<script type="module" src="app.js"></script>
+</body></html>
